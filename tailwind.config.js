@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: "#1c1c1c",
+        button: "#e50914",
+        secondText: "#333",
+      },
       direction: ["rtl"],
     },
   },

@@ -3,6 +3,7 @@ import { logoImage } from "@/static/images";
 import { Icon } from "@iconify/react";
 import { useRouter } from "next/navigation";
 import { Language } from "../util/language";
+import validToken from "../util/tokens";
 export default function Nav() {  
     const language = new Language();
     const router = useRouter();
@@ -28,8 +29,16 @@ export default function Nav() {
                 <Icon icon={"mdi:world"} color="white" />
                    {language.lang().lang}
             </button>
-            <button className=" bg-white border-white text-var(--foreground-rgb) flex gap-1 justify-center items-center border-2 rounded-lg p-2 font-bold">
-            {language.lang().signin}
+            <button className=" bg-white text-primary border-white text-var(--foreground-rgb) flex gap-1 justify-center items-center border-2 rounded-lg p-2 font-bold"
+            onClick={()=>{
+                if(validToken())localStorage.clear();
+
+                router.push("/login")
+          
+            }
+                  }
+            >
+            {!validToken()? language.lang().signin : "Signout"}
             
 
             <Icon icon={"iconamoon:profile-fill"} color="var(--foreground-rgb)" />

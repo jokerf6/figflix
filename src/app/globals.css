@@ -17,4 +17,29 @@
 body {
   background-color: var(--foreground-rgb);
   color: var(--foreground-rgb);
+  color: white;
+}
+/* Custom scrollbar style */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background-color: rebeccapurple;
+  display: none;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:active {
+  background-color: transparent;
 }
